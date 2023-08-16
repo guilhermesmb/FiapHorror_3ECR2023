@@ -1,9 +1,9 @@
 import Image from 'next/image'
 
 export default function Home() {
-  return (
-    <nav>
-      <ul>
+  return ( // JSX
+    <nav className='flex p-4 bg-sky-800'>
+      <ul className='flex gap-20'>
         <li>
           <a href='#'>
             <h1>FiapGames</h1>  
