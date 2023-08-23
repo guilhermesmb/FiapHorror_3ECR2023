@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import Titulo from "@/components/Titulo";
+import Titulo from "@/components/Titulo.jsx";
 
 export default function Home() {
   return ( // JSX
