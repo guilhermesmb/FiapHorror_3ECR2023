@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Titulo from "@/components/Titulo.jsx";
+import Botao from '@/components/Botao.jsx';
 
 export default function Home() {
   return ( // JSX
@@ -42,7 +43,7 @@ export default function Home() {
       <div>
         <span>6.0</span>
       </div>
-      <a href='#' className='bg-sky-800 py-2 w-full rounded text-center' >detalhes</a>
+      <Botao>Detalhes</Botao>
       </div>
 
       <Titulo>Ofertas</Titulo>
