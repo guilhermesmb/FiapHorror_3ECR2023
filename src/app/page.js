@@ -4,6 +4,23 @@ import Botao from '@/components/Botao.jsx';
 import Card from '@/components/Card';
 
 export default function Home() {
+
+  const jogos = [
+
+    {
+      titulo: "God of War",
+      nota: 9.7,
+      poster: "https://th.bing.com/th/id/OIP.XxWTMeSrenp_kSxiwgoYcwHaHa?pid=ImgDet&rs=1"
+    },
+
+    {
+      titulo: "The Last of Us",
+      nota: 10.0,
+      poster: "https://th.bing.com/th/id/OIP.XxWTMeSrenp_kSxiwgoYcwHaHa?pid=ImgDet&rs=1"
+    }
+
+  ]
+
   return ( // JSX
   <>
     <nav className='flex p-4 bg-sky-800'>
@@ -38,57 +55,19 @@ export default function Home() {
 
       <Titulo>Favoritos</Titulo>
 
-      <div className='flex flex-row m-4 p-2 leading-6'>
+      <section className='flex flex-wrap m-4 p-2 leading-6'>
 
-      <Card
-        linkImagem={'https://th.bing.com/th/id/OIP.XxWTMeSrenp_kSxiwgoYcwHaHa?pid=ImgDet&rs=1'}
-        nomezinho={'God of War'}
-        nota={'10.0'}
-        botaozinho={'Detalhes'}
-      />
 
-      <Card
-        linkImagem={'https://th.bing.com/th/id/OIP.XxWTMeSrenp_kSxiwgoYcwHaHa?pid=ImgDet&rs=1'}
-        nomezinho={'God of War'}
-        nota={'10.0'}
-        botaozinho={'Detalhes'}
-      />
 
-      <Card
-        linkImagem={'https://th.bing.com/th/id/OIP.XxWTMeSrenp_kSxiwgoYcwHaHa?pid=ImgDet&rs=1'}
-        nomezinho={'God of War'}
-        nota={'10.0'}
-        botaozinho={'Detalhes'}
-      />
-
-      </div>
+      </section>
 
       <Titulo>Ofertas</Titulo>
 
-      <div className='flex flex-row m-4 p-2 leading-6'>
+      <section className='flex flex-wrap m-4 p-2 leading-6'>
 
-      <Card
-        linkImagem={'https://th.bing.com/th/id/OIP.XxWTMeSrenp_kSxiwgoYcwHaHa?pid=ImgDet&rs=1'}
-        nomezinho={'God of War'}
-        nota={'10.0'}
-        botaozinho={'Detalhes'}
-      />
+      {jogos.map(jogo => <Card jogo={jogo} /> )}
 
-      <Card
-        linkImagem={'https://th.bing.com/th/id/OIP.XxWTMeSrenp_kSxiwgoYcwHaHa?pid=ImgDet&rs=1'}
-        nomezinho={'God of War'}
-        nota={'10.0'}
-        botaozinho={'Detalhes'}
-      />
-
-      <Card
-        linkImagem={'https://th.bing.com/th/id/OIP.XxWTMeSrenp_kSxiwgoYcwHaHa?pid=ImgDet&rs=1'}
-        nomezinho={'God of War'}
-        nota={'10.0'}
-        botaozinho={'Detalhes'}
-      />
-
-      </div>
+      </section>
 
   </>
   )

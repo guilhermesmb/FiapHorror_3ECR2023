@@ -1,14 +1,27 @@
-import Botao from '@/components/Botao.jsx';
+"use client"
 
-export default function Card(props){
+import { StarIcon } from '@heroicons/react/24/outline'
+import { useState } from 'react'
+
+export default function Card({jogo}){
+
+    const [favorito, setFavorito] = useState(true)
+
     return(
         <div id="card" className='flex flex-col p-2 w-40 justify-center items-center'>
-        <img className='rounded' src={props.linkImagem} alt=''/>
-        <span className='font-bold text-center line-clamp-1' >{props.nomezinho}</span>
+
+        { favorito ?
+        <StarIcon onClick= {() => setFavorito(false)} className="h-6 w-6 text-yellow-300 cursor-pointer" />
+        :
+        <StarIcon onClick= {() => setFavorito(true)} className="h-6 w-6 text-gray-300 cursor-pointer" />
+        }
+
+        <img className='rounded' src={jogo.poster} alt=''/>
+        <span className='font-bold text-center line-clamp-1' >{jogo.titulo}</span>
         <div>
-          <span>{props.nota}</span>
+          <span>{jogo.nota} </span>
         </div>
-        <Botao>{props.botaozinho}</Botao>
+        <a href='#' className='bg-sky-800 py-2 w-full rounded text-center' >Detalhes</a>
         </div>
     )
 }
