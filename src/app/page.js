@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Titulo from "@/components/Titulo.jsx";
 import Botao from '@/components/Botao.jsx';
+import Card from '@/components/Card';
 
 export default function Home() {
   return ( // JSX
@@ -37,16 +38,58 @@ export default function Home() {
 
       <Titulo>Favoritos</Titulo>
 
-      <div id="card" className='flex flex-col w-40 justify-center items-center'>
-      <img className='rounded' src='https://place-hold.it/150x220/666' alt=''/>
-      <span className='font-bold text-center line-clamp-1' >Titulo do Filme Card</span>
-      <div>
-        <span>6.0</span>
-      </div>
-      <Botao>Detalhes</Botao>
+      <div className='flex flex-row m-4 p-2 leading-6'>
+
+      <Card
+        linkImagem={'https://th.bing.com/th/id/OIP.XxWTMeSrenp_kSxiwgoYcwHaHa?pid=ImgDet&rs=1'}
+        nomezinho={'God of War'}
+        nota={'10.0'}
+        botaozinho={'Detalhes'}
+      />
+
+      <Card
+        linkImagem={'https://th.bing.com/th/id/OIP.XxWTMeSrenp_kSxiwgoYcwHaHa?pid=ImgDet&rs=1'}
+        nomezinho={'God of War'}
+        nota={'10.0'}
+        botaozinho={'Detalhes'}
+      />
+
+      <Card
+        linkImagem={'https://th.bing.com/th/id/OIP.XxWTMeSrenp_kSxiwgoYcwHaHa?pid=ImgDet&rs=1'}
+        nomezinho={'God of War'}
+        nota={'10.0'}
+        botaozinho={'Detalhes'}
+      />
+
       </div>
 
       <Titulo>Ofertas</Titulo>
+
+      <div className='flex flex-row m-4 p-2 leading-6'>
+
+      <Card
+        linkImagem={'https://th.bing.com/th/id/OIP.XxWTMeSrenp_kSxiwgoYcwHaHa?pid=ImgDet&rs=1'}
+        nomezinho={'God of War'}
+        nota={'10.0'}
+        botaozinho={'Detalhes'}
+      />
+
+      <Card
+        linkImagem={'https://th.bing.com/th/id/OIP.XxWTMeSrenp_kSxiwgoYcwHaHa?pid=ImgDet&rs=1'}
+        nomezinho={'God of War'}
+        nota={'10.0'}
+        botaozinho={'Detalhes'}
+      />
+
+      <Card
+        linkImagem={'https://th.bing.com/th/id/OIP.XxWTMeSrenp_kSxiwgoYcwHaHa?pid=ImgDet&rs=1'}
+        nomezinho={'God of War'}
+        nota={'10.0'}
+        botaozinho={'Detalhes'}
+      />
+
+      </div>
+
   </>
   )
 }
