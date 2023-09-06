@@ -57,7 +57,7 @@ export default function Home() {
 
       <section className='flex flex-wrap m-4 p-2 leading-6'>
 
-      {jogos.map(jogo => <Card jogo={jogo} /> )}gi
+      {jogos.map(jogo => <Card jogo={jogo} /> )}
 
       </section>
 
