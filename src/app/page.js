@@ -10,13 +10,13 @@ export default function Home() {
     {
       titulo: "God of War",
       nota: 9.7,
-      poster: "https://th.bing.com/th/id/OIP.XxWTMeSrenp_kSxiwgoYcwHaHa?pid=ImgDet&rs=1"
+      poster: "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/5855660034a74cfe0e5fc8d57d17f4ac.png"
     },
 
     {
       titulo: "The Last of Us",
       nota: 10.0,
-      poster: "https://th.bing.com/th/id/OIP.XxWTMeSrenp_kSxiwgoYcwHaHa?pid=ImgDet&rs=1"
+      poster: "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/849d7b8124e44421cf640466299db4dc.png"
     }
 
   ]
