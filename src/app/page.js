@@ -3,23 +3,28 @@ import Titulo from "@/components/Titulo.jsx";
 import Botao from '@/components/Botao.jsx';
 import Card from '@/components/Card';
 
-export default function Home() {
-
-  const jogos = [
-
-    {
-      titulo: "God of War",
-      nota: 9.7,
-      poster: "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/5855660034a74cfe0e5fc8d57d17f4ac.png"
-    },
-
-    {
-      titulo: "The Last of Us",
-      nota: 10.0,
-      poster: "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/849d7b8124e44421cf640466299db4dc.png"
+async function carregarJogos(){
+  const url = 'https://rawg-video-games-database.p.rapidapi.com/games';
+  const options = {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Key': '6d9a043edemsh2a1d32bfdff1d56p1d9bcejsnc65b7c136844',
+      'X-RapidAPI-Host': 'rawg-video-games-database.p.rapidapi.com'
     }
+  };
+  
+  try {
+    const response = await fetch(url, options);
+    const result = await response.text();
+    console.log(result);
+  } catch (error) {
+    console.error(error);
+  }
+}
 
-  ]
+export default async function Home() {
+  
+  const jogos = await carregarJogos()
 
   return ( // JSX
   <>
