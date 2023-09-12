@@ -3,20 +3,22 @@ import Titulo from "@/components/Titulo.jsx";
 import Botao from '@/components/Botao.jsx';
 import Card from '@/components/Card';
 
-async function carregarJogos(){
-  const url = 'https://rawg-video-games-database.p.rapidapi.com/games';
+async function carregarJogos() {
+  const url =
+    'https://free-to-play-games-database.p.rapidapi.com/api/filter?tag=3d.mmorpg.fantasy.pvp';
   const options = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': '6d9a043edemsh2a1d32bfdff1d56p1d9bcejsnc65b7c136844',
-      'X-RapidAPI-Host': 'rawg-video-games-database.p.rapidapi.com'
-    }
+      'X-RapidAPI-Key':
+        '6d9a043edemsh2a1d32bfdff1d56p1d9bcejsnc65b7c136844',
+      'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com',
+    },
   };
-  
+
   try {
     const response = await fetch(url, options);
-    const result = await response.text();
-    console.log(result);
+    const result = await response.json(); // Correção: Parse a resposta JSON
+    return result; // Correção: Retorne os dados da API
   } catch (error) {
     console.error(error);
   }
@@ -26,8 +28,8 @@ export default async function Home() {
   
   const jogos = await carregarJogos()
 
-  return ( // JSX
-  <>
+  return ( //JSX
+    <>
     <nav className='flex p-4 bg-sky-800'>
         <ul className='flex gap-20'>
           <li>

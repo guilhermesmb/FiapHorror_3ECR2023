@@ -16,10 +16,10 @@ export default function Card({jogo}){
         <StarIcon onClick= {() => setFavorito(true)} className="h-6 w-6 text-gray-300 cursor-pointer" />
         }
 
-        <img className='rounded' src={jogo.poster} alt=''/>
-        <span className='font-bold text-center line-clamp-1' >{jogo.titulo}</span>
+        <img className='rounded' src={jogo.thumbnail} alt=''/>
+        <span className='font-bold text-center line-clamp-1' >{jogo.title}</span>
         <div>
-          <span>{jogo.nota} </span>
+          <span>{jogo.platform} </span>
         </div>
         <a href='#' className='bg-sky-800 py-2 w-full rounded text-center' >Detalhes</a>
         </div>
