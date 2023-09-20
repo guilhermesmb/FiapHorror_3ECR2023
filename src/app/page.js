@@ -3,38 +3,24 @@ import Titulo from "@/components/Titulo.jsx";
 import Botao from '@/components/Botao.jsx';
 import Card from '@/components/Card';
 
-async function carregarJogos() {
-  const url =
-    'https://free-to-play-games-database.p.rapidapi.com/api/filter?tag=3d.mmorpg.fantasy.pvp';
-  const options = {
-    method: 'GET',
-    headers: {
-      'X-RapidAPI-Key':
-        '6d9a043edemsh2a1d32bfdff1d56p1d9bcejsnc65b7c136844',
-      'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com',
-    },
-  };
-
-  try {
-    const response = await fetch(url, options);
-    const result = await response.json(); // Correção: Parse a resposta JSON
-    return result; // Correção: Retorne os dados da API
-  } catch (error) {
-    console.error(error);
-  }
+async function carregarDados(){
+  const url = "https://api.themoviedb.org/3/trending/movie/week?api_key=1e922667481ab207d642450b0efb461e&language=pt-br"
+  const response = await fetch(url)
+  const json = await response.json()
+  return json.results
 }
 
 export default async function Home() {
   
-  const jogos = await carregarJogos()
+  const filmes = await carregarDados()
 
-  return ( //JSX
+  return (
     <>
     <nav className='flex p-4 bg-sky-800'>
         <ul className='flex gap-20'>
           <li>
             <a href='#'>
-              <h1>FiapGames</h1>  
+              <h1>Fiap Horror</h1>  
             </a>
           </li>
           <li>
@@ -44,17 +30,17 @@ export default async function Home() {
           </li>
           <li>
             <a href='#'>
-              PC
+              Monstros
             </a>
           </li>
           <li>
             <a href='#'>
-              Xbox
+              Assombrações
             </a>
           </li>
           <li>
             <a href='#'>
-              PlayStation
+              Serial Killers
             </a>
           </li>
         </ul>
@@ -64,7 +50,7 @@ export default async function Home() {
 
       <section className='flex flex-wrap m-4 p-2 leading-6'>
 
-      {jogos.map(jogo => <Card jogo={jogo} /> )}
+      {filmes.map(filme => <Card filme={filme} /> )}
 
       </section>
 
@@ -72,7 +58,7 @@ export default async function Home() {
 
       <section className='flex flex-wrap m-4 p-2 leading-6'>
 
-      {jogos.map(jogo => <Card jogo={jogo} /> )}
+      {filmes.map(filme => <Card filme={filme} /> )}
 
       </section>
 
