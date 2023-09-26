@@ -10,6 +10,8 @@ async function carregarDados(){
   return json.results
 }
 
+// "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=terror%7Chorror%7Cthriller"
+
 export default async function Home() {
   
   const filmes = await carregarDados()
