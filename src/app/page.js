@@ -3,31 +3,26 @@ import Titulo from "@/components/Titulo.jsx";
 import Botao from '@/components/Botao.jsx';
 import Card from '@/components/Card';
 
-export default function Home() {
+async function carregarDados(){
+  const url = "https://api.themoviedb.org/3/discover/movie?api_key=1e922667481ab207d642450b0efb461e&with_genres=27,53"
+  const response = await fetch(url)
+  const json = await response.json()
+  return json.results
+}
 
-  const jogos = [
+//Gêneros: https://api.themoviedb.org/3/genre/movie/list?api_key=1e922667481ab207d642450b0efb461e&language=en
 
-    {
-      titulo: "God of War",
-      nota: 9.7,
-      poster: "https://th.bing.com/th/id/OIP.XxWTMeSrenp_kSxiwgoYcwHaHa?pid=ImgDet&rs=1"
-    },
+export default async function Home() {
+  
+  const filmes = await carregarDados()
 
-    {
-      titulo: "The Last of Us",
-      nota: 10.0,
-      poster: "https://th.bing.com/th/id/OIP.XxWTMeSrenp_kSxiwgoYcwHaHa?pid=ImgDet&rs=1"
-    }
-
-  ]
-
-  return ( // JSX
-  <>
+  return (
+    <>
     <nav className='flex p-4 bg-sky-800'>
         <ul className='flex gap-20'>
           <li>
             <a href='#'>
-              <h1>FiapGames</h1>  
+              <h1>Fiap Horror</h1>  
             </a>
           </li>
           <li>
@@ -37,17 +32,17 @@ export default function Home() {
           </li>
           <li>
             <a href='#'>
-              PC
+              Monstros
             </a>
           </li>
           <li>
             <a href='#'>
-              Xbox
+              Assombrações
             </a>
           </li>
           <li>
             <a href='#'>
-              PlayStation
+              Serial Killers
             </a>
           </li>
         </ul>
@@ -57,7 +52,7 @@ export default function Home() {
 
       <section className='flex flex-wrap m-4 p-2 leading-6'>
 
-      {jogos.map(jogo => <Card jogo={jogo} /> )}
+      {filmes.map(filme => <Card filme={filme} /> )}
 
       </section>
 
@@ -65,7 +60,7 @@ export default function Home() {
 
       <section className='flex flex-wrap m-4 p-2 leading-6'>
 
-      {jogos.map(jogo => <Card jogo={jogo} /> )}
+      {filmes.map(filme => <Card filme={filme} /> )}
 
       </section>
 
