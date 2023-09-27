@@ -39,9 +39,10 @@ export default function NavBar() {
               Serial Killers
             </a>
           </li>
+          <li>
+          <button onClick={handleLogout}>adoraria sair desse site</button>
+          </li>
         </ul>
-
-        <button onClick={handleLogout}>adoraria sair desse site</button>
       </nav>
     )
 }
