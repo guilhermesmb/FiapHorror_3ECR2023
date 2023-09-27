@@ -1,7 +1,6 @@
-import Image from 'next/image'
 import Titulo from "@/components/Titulo.jsx";
-import Botao from '@/components/Botao.jsx';
 import Card from '@/components/Card';
+import NavBar from "@/components/NavBar";
 
 async function carregarDados(){
   const url = "https://api.themoviedb.org/3/discover/movie?api_key=1e922667481ab207d642450b0efb461e&with_genres=27,53"
@@ -16,37 +15,10 @@ export default async function Home() {
   
   const filmes = await carregarDados()
 
+
   return (
     <>
-    <nav className='flex p-4 bg-sky-800'>
-        <ul className='flex gap-20'>
-          <li>
-            <a href='#'>
-              <h1>Fiap Horror</h1>  
-            </a>
-          </li>
-          <li>
-            <a href='#'>
-              Favoritos
-            </a>
-          </li>
-          <li>
-            <a href='#'>
-              Monstros
-            </a>
-          </li>
-          <li>
-            <a href='#'>
-              Assombrações
-            </a>
-          </li>
-          <li>
-            <a href='#'>
-              Serial Killers
-            </a>
-          </li>
-        </ul>
-      </nav>
+      <NavBar />
 
       <Titulo>Favoritos</Titulo>
 
@@ -63,7 +35,6 @@ export default async function Home() {
       {filmes.map(filme => <Card filme={filme} /> )}
 
       </section>
-
   </>
   )
 }

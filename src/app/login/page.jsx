@@ -4,6 +4,7 @@ import Image from "next/image";
 import loginimage from "@/images/login.jpg"
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { serverLogin } from "@/actions/user";
 
 export default function Login(){
     const [email, setEmail] = useState("")
@@ -12,7 +13,10 @@ export default function Login(){
 
     function login(e){
         e.preventDefault()
+        console.log(email);
+        console.log(senha);
         if (email == "guilherme@gmail.com" && senha=="123"){
+            serverLogin()
             push("/")
         }else{
             toast.error("dados inválidos")
