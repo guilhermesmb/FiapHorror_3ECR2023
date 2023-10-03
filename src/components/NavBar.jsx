@@ -20,27 +20,22 @@ export default function NavBar() {
             </a>
           </li>
           <li>
-            <a href='#'>
-              Favoritos
+            <a href='#suspense'>
+              Suspense
             </a>
           </li>
           <li>
-            <a href='#'>
-              Monstros
+            <a href='#terror'>
+              Terror
             </a>
           </li>
           <li>
-            <a href='#'>
-              Assombrações
+            <a href='#scifi'>
+              Sci-Fi
             </a>
           </li>
           <li>
-            <a href='#'>
-              Serial Killers
-            </a>
-          </li>
-          <li>
-          <button onClick={handleLogout}>adoraria sair desse site</button>
+          <button onClick={handleLogout}>Logout</button>
           </li>
         </ul>
       </nav>
